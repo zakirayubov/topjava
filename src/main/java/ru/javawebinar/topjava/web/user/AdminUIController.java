@@ -9,7 +9,7 @@ import ru.javawebinar.topjava.model.User;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ajax/admin/users")
+@RequestMapping("/admin/users")
 public class AdminUIController extends AbstractUserController {
 
     @Override
@@ -32,7 +32,7 @@ public class AdminUIController extends AbstractUserController {
                                @RequestParam String email,
                                @RequestParam String password) {
 
-        User user = new User(id, name, email, password, Role.ROLE_USER);
+        User user = new User(id, name, email, password, Role.USER);
         if (user.isNew()) {
             super.create(user);
         }
